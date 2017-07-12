@@ -12,7 +12,6 @@ win = pyglet.window.Window(width=w, height=h)
 
 pyglet.gl.glClearColor(1, 1, 1, 1)
 
-
 @win.event
 def on_draw():
     win.clear()
