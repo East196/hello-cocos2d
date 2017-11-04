@@ -87,11 +87,11 @@ class KingDetail(PanedWindow):
         flagnum_entry.bind("<KeyRelease>", self.flagnum_changed)
         flagnum_entry.grid(row=1, column=1)
 
-    def name_changed(self):
-        print "name is", self.name.get()
+    def name_changed(self, item):
+        print item, "name is", self.name.get()
 
-    def flagnum_changed(self):
-        print "flagnum is", self.flagnum.get()
+    def flagnum_changed(self, item):
+        print item, "flagnum is", self.flagnum.get()
 
 
 def callback():

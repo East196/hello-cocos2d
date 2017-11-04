@@ -116,10 +116,11 @@ class GameLayer(Layer):
         bad_guy.born(position)
         badguys.append(bad_guy)
 
-    ## 此处控制兔子运动
+
     def on_key_press(self, key, modifiers):
         self.keys_pressed.add(key)
-        self.update_text()
+
+
 
     def on_key_release(self, key, modifiers):
         self.keys_pressed.remove(key)
@@ -130,6 +131,7 @@ class GameLayer(Layer):
         arrows.append(arrow)
 
     def draw(self, *args, **kwargs):
+        self.update_text()
         for arrow in arrows:
             for badguy in badguys:
                 if arrow.sprite.get_rect().intersect(badguy.sprite.get_rect()):
