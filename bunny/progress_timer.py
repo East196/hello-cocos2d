@@ -46,13 +46,13 @@ class ProgressTimer():
     def get_midpoint(self):
         return self._midpoint
 
-    def set_midpoint(self,point):
+    def set_midpoint(self, point):
         pass
 
     def get_bar_change_rate(self):
         return self._bar_change_rate
 
-    def set_bar_change_rate(self,bar_change_rate):
+    def set_bar_change_rate(self, bar_change_rate):
         pass
 
 

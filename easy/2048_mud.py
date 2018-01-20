@@ -194,7 +194,7 @@ if __name__ == "__main__":
     #     print i,item, line[i:-1],line[i:-1][-1]
     # line = [1, 2, 4, 8]
     # for i in range(1,len(line)-1):
-    #     print i
+    #     print i;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;\
     #     line[i]=line[i+1]
     # line.pop(len(line)-1)
     # print line

@@ -1,5 +1,7 @@
-**/*.pyc
-**/.cache
-.idea
-.idea/*
-LICENSE
+.idea/
+book/
+mishuo/book/
+**/lastfailed
+**/*.csv
+**/*.zip
+**/*.db

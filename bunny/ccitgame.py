@@ -116,18 +116,15 @@ class GameLayer(Layer):
         bad_guy.born(position)
         badguys.append(bad_guy)
 
-
     def on_key_press(self, key, modifiers):
         self.keys_pressed.add(key)
-
-
 
     def on_key_release(self, key, modifiers):
         self.keys_pressed.remove(key)
 
     def on_mouse_press(self, x, y, buttons, modifiers):
         self.mouse_target = director.get_virtual_coordinates(x, y)
-        arrow =self.hero.attack(self.mouse_target)
+        arrow = self.hero.attack(self.mouse_target)
         arrows.append(arrow)
 
     def draw(self, *args, **kwargs):
@@ -135,7 +132,7 @@ class GameLayer(Layer):
         for arrow in arrows:
             for badguy in badguys:
                 if arrow.sprite.get_rect().intersect(badguy.sprite.get_rect()):
-                    print arrow.sprite.get_rect(),badguy.sprite.get_rect()
+                    print arrow.sprite.get_rect(), badguy.sprite.get_rect()
                     arrow.sprite.delete()
                     arrows.remove(arrow)
                     badguy.sprite.delete()
@@ -229,9 +226,8 @@ class HUD(Layer):
 
 
 if __name__ == "__main__":
-
-    arrows=[]
-    badguys=[]
+    arrows = []
+    badguys = []
     cocos.director.director.init()
     main_scene = cocos.scene.Scene()
     main_scene.add(BgLayer())

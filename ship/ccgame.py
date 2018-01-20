@@ -19,13 +19,13 @@ class Explosion(cocos.scene.Scene):
         super(Explosion, self).__init__()
         self.x = x
         self.y = y
-        sheet = pyglet.image.load("x.png")
+        sheet = pyglet.image.load("res/x.png")
         self.images = []
         for i in range(0, 768, 48):
             image = sheet.get_region(i, 0, 48, 48)
             self.images.append(image)
 
-        animation = pyglet.image.Animation.from_image_sequence(self.images, 0.1, False)
+        animation = pyglet.image.Animation.from_image_sequence(self.images, 0.1, True)
         self.sprite = cocos.sprite.Sprite(animation, position=self.position)
         self.add(self.sprite)
 

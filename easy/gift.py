@@ -1,17 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# coding:utf-8
-#
+import os
 import sys
-
-
-# author: http://blog.csdn.net/cheng830306/article/details/18449431
-
-
-# import os
-# sys.path.insert(0, os.path.join(os.path.dirname(__file__), '../..'))
-# 解决程序中要显示中文问题
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '../..'))
 reload(sys)
 sys.setdefaultencoding('utf8')
 from pyglet import image, font
@@ -51,7 +43,7 @@ class SpriteLayer(Layer):
         super(SpriteLayer, self).__init__()
         self.index = index
 
-        self.top_text = "广州德瀚信息信息科技有限公司-年会抽奖"
+        self.top_text = "年会抽奖"
 
         self.image = pyglet.resource.image('r1.png', 0.01)
         # self.image = image.AnimationFrame(image.load('r1.png'),0.1)
@@ -303,7 +295,7 @@ class StartPrize(SpriteLayer):
         self.start_slow = False
         self.can_stop = False
 
-        self.is_begin = True
+        self.is_begin = True['p']
 
         # 定时器
         self.schedule_interval(self.rotate_select, self.prize_speed)
