@@ -132,7 +132,7 @@ class GameLayer(Layer):
         for arrow in arrows:
             for badguy in badguys:
                 if arrow.sprite.get_rect().intersect(badguy.sprite.get_rect()):
-                    print arrow.sprite.get_rect(), badguy.sprite.get_rect()
+                    print(arrow.sprite.get_rect(), badguy.sprite.get_rect())
                     arrow.sprite.delete()
                     arrows.remove(arrow)
                     badguy.sprite.delete()
@@ -159,8 +159,8 @@ class BgLayer(Layer):
         self.grass = pyglet.resource.image("resources/images/grass.png")
         self.castle = pyglet.resource.image("resources/images/castle.png")
         window_size = cocos.director.director.get_window_size()
-        for x in range(window_size[0] / self.grass.width + 1):
-            for y in range(window_size[1] / self.grass.height + 1):
+        for x in range(window_size[0] // self.grass.width + 1):
+            for y in range(window_size[1] // self.grass.height + 1):
                 self.add_sprite(self.grass, (x * 100, y * 100 + 50))
         self.add_sprite(self.castle, (50, 100))
         self.add_sprite(self.castle, (50, 200))
@@ -176,7 +176,7 @@ class BgLayer(Layer):
 class MessageLayer(Layer):
     def __init__(self):
         super(MessageLayer, self).__init__()
-        self.msg = str((90 - int(time.clock())) / 60).zfill(2) + ":" + str((90 - int(time.clock())) % 60).zfill(2)
+        self.msg = str((90 - int(time.perf_counter())) // 60).zfill(2) + ":" + str((90 - int(time.perf_counter())) % 60).zfill(2)
         self.score = Label(self.msg, font_size=24,
                            font_name='Edit Undo Line BRK',
                            color=(255, 255, 255, 255),
@@ -187,7 +187,7 @@ class MessageLayer(Layer):
 
     def draw(self):
         super(MessageLayer, self).draw()
-        self.msg = str((90 - int(time.clock())) / 60).zfill(2) + ":" + str((90 - int(time.clock())) % 60).zfill(2)
+        self.msg = str((90 - int(time.perf_counter())) // 60).zfill(2) + ":" + str((90 - int(time.perf_counter())) % 60).zfill(2)
         self.score.element.text = self.msg
 
 
@@ -233,5 +233,5 @@ if __name__ == "__main__":
     main_scene.add(BgLayer())
     main_scene.add(GameLayer())
     main_scene.add(HUD())
-    print "window size: ", cocos.director.director.get_window_size()
+    print("window size: ", cocos.director.director.get_window_size())
     cocos.director.director.run(main_scene)

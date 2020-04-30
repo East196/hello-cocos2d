@@ -83,11 +83,11 @@ def random_num():
 
 
 def draw(lines):
-    print "step"
-    print "|----|----|----|----|"
+    print("step")
+    print("|----|----|----|----|")
     for line in lines:
-        print "|" + "|".join(map(lambda item: str(item).center(4), line)) + "|"
-        print "|----|----|----|----|"
+        print("|" + "|".join(map(lambda item: str(item).center(4), line)) + "|")
+        print("|----|----|----|----|")
 
 
 def avail(lines):

@@ -39,8 +39,8 @@ while running:
     # 5 - clear the screen before drawing it again
     screen.fill(0)
     # 6 - draw the screen elements
-    for x in range(width / grass.get_width() + 1):
-        for y in range(height / grass.get_height() + 1):
+    for x in range(width // grass.get_width() + 1):
+        for y in range(height // grass.get_height() + 1):
             screen.blit(grass, (x * 100, y * 100))
     screen.blit(castle, (0, 30))
     screen.blit(castle, (0, 135))
@@ -50,7 +50,7 @@ while running:
     position = pygame.mouse.get_pos()
     angle = math.atan2(position[1] - (playerpos[1] + 32), position[0] - (playerpos[0] + 26))
     playerrot = pygame.transform.rotate(player, 360 - angle * 57.29)
-    playerpos1 = (playerpos[0] - playerrot.get_rect().width / 2, playerpos[1] - playerrot.get_rect().height / 2)
+    playerpos1 = (playerpos[0] - playerrot.get_rect().width // 2, playerpos[1] - playerrot.get_rect().height // 2)
     screen.blit(playerrot, playerpos1)
     # 6.2 - Draw arrows
     for bullet in arrows:
@@ -102,7 +102,7 @@ while running:
         screen.blit(badguyimg, badguy)
     # 6.4 - Draw clock
     font = pygame.font.Font(None, 24)
-    survivedtext = font.render(str((90000 - pygame.time.get_ticks()) / 60000) + ":" + str((90000 - pygame.time.get_ticks()) / 1000 % 60).zfill(2), True,
+    survivedtext = font.render(str((90000 - pygame.time.get_ticks()) // 60000) + ":" + str((90000 - pygame.time.get_ticks()) // 1000 % 60).zfill(2), True,
                                (0, 0, 0))
     textRect = survivedtext.get_rect()
     textRect.topright = [635, 5]
@@ -160,7 +160,7 @@ while running:
         running = 0
         exitcode = 0
     if acc[1] != 0:
-        accuracy = acc[0] * 1.0 / acc[1] * 100
+        accuracy = acc[0] * 1.0 // acc[1] * 100
     else:
         accuracy = 0
 # 11 - Win/lose display       

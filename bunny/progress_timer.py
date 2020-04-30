@@ -58,4 +58,4 @@ class ProgressTimer():
 
 if __name__ == '__main__':
     p = ProgressTimer()
-    print p.get_type()
+    print(p.get_type())

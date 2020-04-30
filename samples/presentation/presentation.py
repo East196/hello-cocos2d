@@ -172,7 +172,7 @@ if __name__ == "__main__":
 
 
         cocos.scene.Scene(
-            BulletListLayer("Inspiration", [
+            BulletListLayer("", [
                 "2000 : pygame",
                 "2005 : pyweek",
                 "2006 : pyglet",

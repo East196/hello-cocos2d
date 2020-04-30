@@ -13,9 +13,9 @@ import re
 regex = re.compile(r'\\(?![/u"])')
 value = regex.sub(r"\\\\", value)
 value=json.loads(value.encode("utf-8"))
-print value
+print(value)
 
 # print value[0]['name'].encode('ascii')
-print value[0]['name'].decode("string_escape")
+print(value[0]['name'].decode("string_escape"))
 
-print '\xE6\xAF\x8D\xE5\xA9\xB4\xE4\xBA\xB2\xE5\xAD\x90/\xE6\xAF\x8D\xE5\xA9\xB4\xE7\xA4\xBE\xE5\x8C\xBA'
+print('\xE6\xAF\x8D\xE5\xA9\xB4\xE4\xBA\xB2\xE5\xAD\x90/\xE6\xAF\x8D\xE5\xA9\xB4\xE7\xA4\xBE\xE5\x8C\xBA')
